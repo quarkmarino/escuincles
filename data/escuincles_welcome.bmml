@@ -1,0 +1,60 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1783" measuredH="818" mockupW="1723" mockupH="798">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="60" y="20" w="1723" h="798" measuredW="450" measuredH="400" zOrder="0" locked="true" isInGroup="-1"/>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::Canvas" x="326" y="92" w="258" h="569" measuredW="100" measuredH="70" zOrder="1" locked="false" isInGroup="-1"/>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::List" x="389" y="189" w="133" h="126" measuredW="100" measuredH="126" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>none</borderStyle>
+        <size>16</size>
+        <text>Introducci%F3n%0AInformaci%F3n%0AUbicaci%F3n%0AGalerias%0AContacto</text>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::SubTitle" x="341" y="130" w="-1" h="-1" measuredW="229" measuredH="27" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Escuincles%20Traviesos</text>
+      </controlProperties>
+    </control>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::Icon" x="422" y="707" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>FacebookIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::Icon" x="447" y="707" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>GoogleIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::Icon" x="472" y="707" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>TwitterIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::Label" x="369" y="738" w="-1" h="-1" measuredW="69" measuredH="21" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Creado%20por%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::Link" x="447" y="739" w="-1" h="-1" measuredW="79" measuredH="19" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>polarix-q.com</text>
+      </controlProperties>
+    </control>
+    <control controlID="11" controlTypeID="com.balsamiq.mockups::Title" x="834" y="229" w="-1" h="-1" measuredW="860" measuredH="63" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>60</size>
+        <text>ESCUINCLES%20TRAVIESOS%20A.C.</text>
+      </controlProperties>
+    </control>
+    <control controlID="12" controlTypeID="com.balsamiq.mockups::Paragraph" x="955" y="322" w="739" h="90" measuredW="200" measuredH="80" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>18</size>
+        <text>El%20grupo%20%22Escuincles%20Traviesos%22%20%28ni%F1@s%2C%20j%F3venes%20y%20adultos%29%20se%20forma%20desde%20el%20a%F1o%20de%201997%20y%20a%20la%20fecha%20se%20ha%20consolidado%20como%20un%20grupo%20aut%F3nomo%2C%20el%20cual%20le%20ha%20dado%20un%20espacio%20l%FAdico%2C%20libre%20y%20alternativo%20a%20ni%F1@s%20y%20j%F3venes%20de%20la%20colonia%20Montoya%20y%20circunvecinas.</text>
+      </controlProperties>
+    </control>
+    <control controlID="13" controlTypeID="com.balsamiq.mockups::Button" x="1543" y="409" w="151" h="51" measuredW="102" measuredH="27" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Conocer%20m%E1s</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
