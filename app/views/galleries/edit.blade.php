@@ -1,0 +1,1 @@
+/home/jorge/quark/escuincles/app/views/galleries/edit.blade.php
