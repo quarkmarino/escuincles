@@ -26,7 +26,7 @@ class CreateImagesTable extends Migration {
 			$table->text('comment');
 			$table->timestamps();
 
-			$table->foreign('gallery_id')->references('id')->on('galleries')
+			$table->foreign('gallery_id')->references('id')->on('galleries');
 		});
 	}
 
