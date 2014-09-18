@@ -15,7 +15,7 @@ class CreateImagesTable extends Migration {
 		Schema::create('images', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->integer('gallery_id');
+			$table->integer('gallery_id')->unsigned();
 			$table->string('name', 255);
 			$table->string('file', 255);
 			$table->string('thumb', 255);
@@ -25,6 +25,8 @@ class CreateImagesTable extends Migration {
 			$table->text('tags');
 			$table->text('comment');
 			$table->timestamps();
+
+			$table->foreign('gallery_id')->references('id')->on('galleries')
 		});
 	}
 
