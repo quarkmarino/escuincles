@@ -41,7 +41,7 @@ class Gallery implements GalleryInterface{
     ->orderBy('created_at', 'asc')
     ->get();
   }
-provider
+  
   public function paginate($limit = null){
     return \Models\Gallery::paginate($limit);
   }
