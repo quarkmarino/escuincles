@@ -123,7 +123,8 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
       
       /*Jeffrey Way laravel generators service provider*/
-      	'Way\Generators\GeneratorsServiceProvider'
+      	'Way\Generators\GeneratorsServiceProvider',
+      	'Repositories\Services\Providers\EloquentServiceProvider',
 
 	),
 

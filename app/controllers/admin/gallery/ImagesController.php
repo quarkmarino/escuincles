@@ -1,84 +1,88 @@
 <?php
 
-class GalleriesController extends \BaseController {
+namespace Controllers\Admin\Gallery;
+
+use Controllers\BaseController;
+
+class ImagesController extends BaseController {
 
 	/**
 	 * Display a listing of the resource.
-	 * GET /galleries
+	 * GET /admin/Galeries/{id}/images
 	 *
 	 * @return Response
 	 */
-	public function index()
+  	public function index($gallery_id)
 	{
 		//
 	}
 
 	/**
 	 * Show the form for creating a new resource.
-	 * GET /galleries/create
+	 * GET /admin/galleries/{id}/images/create
 	 *
 	 * @return Response
 	 */
-	public function create()
+	public function create($gallery_id)
 	{
 		//
 	}
 
 	/**
 	 * Store a newly created resource in storage.
-	 * POST /galleries
+	 * POST /admin/galleries/{id}/images/
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store($gallery_id)
 	{
 		//
 	}
 
 	/**
 	 * Display the specified resource.
-	 * GET /galleries/{id}
+	 * GET  /admin/galleries/{id}/images/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($gallery_id, $id)
 	{
 		//
 	}
 
 	/**
 	 * Show the form for editing the specified resource.
-	 * GET /galleries/{id}/edit
+	 * GET /admin/galleries/{id}/images/{id}/edit
 	 *
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit($gallery_id, $id)
 	{
 		//
 	}
 
 	/**
 	 * Update the specified resource in storage.
-	 * PUT /galleries/{id}
+	 * PUT /admin/galleries/{id}/images/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($gallery_id, $id)
 	{
 		//
 	}
 
 	/**
 	 * Remove the specified resource from storage.
-	 * DELETE /galleries/{id}
+	 * DELETE /admin/galleries/{id}/images/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy($gallery_id, $id)
 	{
 		//
 	}

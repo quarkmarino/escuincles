@@ -17,7 +17,8 @@ Route::get('/', function()
 });
 
 
-Route::get('/galerias', function()
-{
-	return View::make('galleries');
-});
+
+//Route::group(array('domain' => 'admin.escuincles.quarkmarino.kd.io'), function(){
+  Route::resource('galleries', 'Controllers\Admin\GalleriesController');
+  Route::resource('galleries.images', 'Controllers\Admin\Gallery\ImagesController');
+//});

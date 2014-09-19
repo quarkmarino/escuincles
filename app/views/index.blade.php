@@ -54,7 +54,7 @@
 
     <!-- Modal -->
     <!-- DO NOT MOVE, EDIT OR REMOVE - this is needed in order for popup content to be populated in it -->
-    @include("widgets common-modal")
+    @include("widgets.common-modal")
 
     
     <!-- Javascripts
