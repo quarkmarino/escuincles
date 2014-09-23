@@ -3,10 +3,16 @@ namespace Controllers\Admin;
 
 use Controllers\BaseController;
 use Repositories\Interfaces\GalleryInterface;
+use View;
 
 class GalleriesController extends BaseController {
   
   protected $gallery;
+  
+  /**
+  * The layout that should be used for responses.
+  */
+  protected $layout = 'admin.galleries.layouts.gallery';
   
   public function __construct(GalleryInterface $gallery){
     $this->gallery = $gallery;
@@ -21,7 +27,6 @@ class GalleriesController extends BaseController {
   public function index(){
     $galleries = $this->gallery->findAll();
     $this->layout->content = View::make('admin.galleries.index')->with(compact('galleries'));
-    return $this->layout->render();
   }
   
   /**

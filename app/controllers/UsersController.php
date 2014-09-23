@@ -1,5 +1,11 @@
 <?php
 
+namespace Controllers\Admin;
+
+use Controllers\BaseController;
+use Repositories\Interfaces\GalleryInterface;
+use View;
+
 class UsersController extends \BaseController {
 
 	/**

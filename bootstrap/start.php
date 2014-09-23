@@ -26,7 +26,8 @@ $app = new Illuminate\Foundation\Application;
 
 $env = $app->detectEnvironment(array(
 
-	'local' => array('homestead'),
+	'development' => array('vm-0.quarkmarino.koding.kd.io'),
+	'production' => array('vm-0.quarkmarino.koding.kd.io'),
 
 ));
 

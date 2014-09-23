@@ -1104,11 +1104,11 @@ h6 {
     @media (min-width: 992px) {
         #main-content .form-style input.text-field,
         #main-content .form-style textarea {
-            height:54px;
+            height:34px;
             font-size:0.97em;
         }
         #main-content .form-style textarea {
-            height:195px;
+            height:95px;
         }  
     }
     @media (min-width: 1200px) {  
