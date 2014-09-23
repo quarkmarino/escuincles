@@ -68,7 +68,9 @@ class GalleriesController extends BaseController {
        * @return Response
        */
   public function edit($id){
-    //
+    $gallery = $this->gallery->findById($id);
+    $imageInstance = $this->image->instance();
+    $this->layout->content = View::make('admin.galleries.edit')->with(compact('gallery'));
   }
   
   /**
@@ -90,7 +92,8 @@ class GalleriesController extends BaseController {
        * @return Response
        */
   public function destroy($id){
-    //
+    $this->gallery->destroy($id);
+	return Redirect::route('admin.galleries.index');//->with('success', 'The gallery has been deleted');
   }
 
 }
