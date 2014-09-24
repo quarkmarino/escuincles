@@ -5,8 +5,7 @@ namespace Models;
 use Eloquent;
 
 class Gallery extends \Eloquent {
-	
-	protected $fillable = array();
+	protected $fillable = array('author_id', 'name', 'comment', 'status', 'tags', 'status', 'description', 'title');
 	
 	public static function boot(){
 		parent::boot();

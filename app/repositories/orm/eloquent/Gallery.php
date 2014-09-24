@@ -53,7 +53,7 @@ class Gallery implements GalleryInterface{
   */
 
   public function store($author_id, $data){
-    $data['user_id'] = $author_id;
+    $data['author_id'] = $author_id;
     $this->validation($data);
     return \Models\Gallery::create($data);
   }

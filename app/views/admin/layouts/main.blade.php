@@ -12,12 +12,12 @@
     <title>TWILLI | Air</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap theme -->
-    <link href="assets/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="/assets/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="assets/css/styles.css" rel="stylesheet">
+    <link href="/assets/css/styles.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -35,13 +35,13 @@
 
     <!-- Jquery and Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Easing - for transitions and effects -->
-    <script src="assets/js/jquery.easing.1.3.js"></script>
+    <script src="/assets/js/jquery.easing.1.3.js"></script>
 
     <!-- background image strech script -->
-    <script src="assets/js/jquery.backstretch.min.js"></script>
+    <script src="/assets/js/jquery.backstretch.min.js"></script>
     <!-- background image fix for IE 9 or less
        - use same background as set above to <body> -->
     <!--[if lt IE 9]>
@@ -53,11 +53,11 @@
     <![endif]-->  
 
     <!-- detect mobile browsers -->
-    <script src="assets/js/detectmobilebrowser.js"></script>
+    <script src="/assets/js/detectmobilebrowser.js"></script>
 
     <!-- Custom functions for this theme -->
-    <script src="assets/js/functions.min.js"></script>
-    <script src="assets/js/initialise-functions.js"></script>
+    <script src="/assets/js/functions.min.js"></script>
+    <script src="/assets/js/initialise-functions.js"></script>
 
     <!-- IE9 form fields placeholder fix -->
     <!--[if lt IE 9]>

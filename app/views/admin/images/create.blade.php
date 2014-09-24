@@ -1,1 +1,0 @@
-/home/jorge/quark/escuincles/app/views/images/create.blade.php
