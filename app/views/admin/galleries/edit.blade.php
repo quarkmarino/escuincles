@@ -7,7 +7,7 @@
 		@include("admin.galleries.partials.sidebar")
 		
 		<section id="main-content" class="clearfix">
-			@include("admin.galleries.partials.thumbs")
+			@include("admin.images.partials.thumbs")
 		</section><!-- #main-content -->
 		@include("widgets.footer")
 	</div><!-- #outer-container -->
@@ -16,4 +16,4 @@
 	<!-- Modal -->
 	<!-- DO NOT MOVE, EDIT OR REMOVE - this is needed in order for popup content to be populated in it -->
 	@include("widgets.common-modal")
-@stop/home/jorge/quark/escuincles/app/views/galleries/edit.blade.php
+@stop

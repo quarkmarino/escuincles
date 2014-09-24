@@ -3,8 +3,23 @@
 namespace Controllers\Admin\Gallery;
 
 use Controllers\BaseController;
+use Repositories\Interfaces\ImageInterface;
+use Repositories\Interfaces\GalleryInterface;
+use View;
+
 
 class ImagesController extends BaseController {
+
+	protected $image;
+	protected $gallery;
+	protected $layout = 'admin.images.layouts.image';
+
+
+	public function __construct( ImageInterface $image, GalleryInterface $gallery){
+    	$this->image = $image;
+    	$this->gallery = $gallery;
+  	}
+
 
 	/**
 	 * Display a listing of the resource.
@@ -12,20 +27,10 @@ class ImagesController extends BaseController {
 	 *
 	 * @return Response
 	 */
-  	public function index($gallery_id)
-	{
-		//
-	}
-
-	/**
-	 * Show the form for creating a new resource.
-	 * GET /admin/galleries/{id}/images/create
-	 *
-	 * @return Response
-	 */
-	public function create($gallery_id)
-	{
-		//
+  	public function index($gallery_id){
+  		$gallery = $this->gallery->findById($gallery_id);
+   		$images = $this->image->findAllByGallery($gallery_id);
+   		$this->layout->content = View::make('admin.images.index')->with(compact('gallery', 'images'));
 	}
 
 	/**
@@ -40,18 +45,6 @@ class ImagesController extends BaseController {
 	}
 
 	/**
-	 * Display the specified resource.
-	 * GET  /admin/galleries/{id}/images/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($gallery_id, $id)
-	{
-		//
-	}
-
-	/**
 	 * Show the form for editing the specified resource.
 	 * GET /admin/galleries/{id}/images/{id}/edit
 	 *
@@ -60,7 +53,9 @@ class ImagesController extends BaseController {
 	 */
 	public function edit($gallery_id, $id)
 	{
-		//
+		$gallery = $this->gallery->findById($gallery_id);
+		$image = $this->image->findByIdInGallery($gallery->id, $id);
+   		$this->layout->content = View::make('admin.images.edit')->with(compact('gallery','image'));//
 	}
 
 	/**

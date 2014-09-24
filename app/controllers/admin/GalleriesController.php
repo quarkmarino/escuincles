@@ -3,19 +3,25 @@ namespace Controllers\Admin;
 
 use Controllers\BaseController;
 use Repositories\Interfaces\GalleryInterface;
+use Repositories\Interfaces\ImageInterface;
 use View;
+use Input;
+use Redirect;
+
 
 class GalleriesController extends BaseController {
   
   protected $gallery;
+  protected $image;
   
   /**
   * The layout that should be used for responses.
   */
   protected $layout = 'admin.galleries.layouts.gallery';
   
-  public function __construct(GalleryInterface $gallery){
+  public function __construct(GalleryInterface $gallery, ImageInterface $image){
     $this->gallery = $gallery;
+    $this->image = $image;
   }
   
   /**
@@ -29,15 +35,6 @@ class GalleriesController extends BaseController {
     $this->layout->content = View::make('admin.galleries.index')->with(compact('galleries'));
   }
   
-  /**
-       * Show the form for creating a new resource.
-       * GET /admin/galleries/create
-       *
-       * @return Response
-       */
-  public function create(){
-    //
-  }
   
   /**
        * Store a newly created resource in storage.
@@ -46,18 +43,9 @@ class GalleriesController extends BaseController {
        * @return Response
        */
   public function store(){
-    //
-  }
-  
-  /**
-       * Display the specified resource.
-       * GET /admin/galleries/{id}
-       *
-       * @param  int  $id
-       * @return Response
-       */
-  public function show($id){
-    //
+    $input = Input::all();
+    $gallery = $this->gallery->store(1,$input);
+    return Redirect::route('galleries.edit',$gallery->id);
   }
   
   /**
@@ -70,7 +58,7 @@ class GalleriesController extends BaseController {
   public function edit($id){
     $gallery = $this->gallery->findById($id);
     $imageInstance = $this->image->instance();
-    $this->layout->content = View::make('admin.galleries.edit')->with(compact('gallery'));
+    $this->layout->content = View::make('admin.galleries.edit')->with(compact('gallery','imageInstance'));
   }
   
   /**
