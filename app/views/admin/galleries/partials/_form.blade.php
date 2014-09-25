@@ -3,10 +3,10 @@
 	<div class="col-sm-12 col-md-12">
 	{{ Form::open( array('route' => 'galleries.store', 'class' => 'form-style validate-form clearfix', 'id' => 'gallery-create-form', 'role' => 'form') ) }}
 @else
-	@if(isset($gallery->main_image))
-		@include("admin.images.partial._main_image_thumb")
-	@else
+	@if( $gallery->main_image === null )
 		@include("admin.images.partials._main_image_form")
+	@else
+		@include("admin.images.partials._main_image_thumb")
 	@endif
 	<div class="col-sm-7 col-md-9">
 	{{ Form::model($gallery, array('route' => array('galleries.update', $gallery->id), 'class' => 'form-style validate-form clearfix', 'id' => 'gallery-edit-form', 'method' => 'put') ) }}
