@@ -65,6 +65,7 @@ class Image extends Eloquent {
 	
 	//sets the "file" path atribute from the original image received from form
 	public function setFileAttribute($value){
+		dd($value);
 		//if a image "file" is received from the form
 		if(Input::hasFile('file')){
 			//instantiates an Intervention Image object from temp received file
