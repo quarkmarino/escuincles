@@ -9,7 +9,7 @@ use Input;
 use Redirect;
 
 
-class GalleriesController extends BaseController {
+class GalleriesController extends BaseController{
   
   protected $gallery;
   protected $image;
@@ -57,8 +57,8 @@ class GalleriesController extends BaseController {
        */
   public function edit($id){
     $gallery = $this->gallery->findById($id);
-    $imageInstance = $this->image->instance();
-    $this->layout->content = View::make('admin.galleries.edit')->with(compact('gallery','imageInstance'));
+    $image = $this->image->instance();
+    $this->layout->content = View::make('admin.galleries.edit')->with(compact('gallery','image'));
   }
   
   /**
@@ -69,7 +69,9 @@ class GalleriesController extends BaseController {
        * @return Response
        */
   public function update($id){
-    //
+    $input = Input::all();
+	$gallery = $this->gallery->update($id, $input);
+	return Redirect::route('galleries.edit', $gallery->id);
   }
   
   /**

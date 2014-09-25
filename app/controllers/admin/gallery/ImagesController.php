@@ -6,16 +6,18 @@ use Controllers\BaseController;
 use Repositories\Interfaces\ImageInterface;
 use Repositories\Interfaces\GalleryInterface;
 use View;
+use Input;
+use Response;
 
 
-class ImagesController extends BaseController {
+class ImagesController extends BaseController{
 
 	protected $image;
 	protected $gallery;
 	protected $layout = 'admin.images.layouts.image';
 
 
-	public function __construct( ImageInterface $image, GalleryInterface $gallery){
+	public function __construct(ImageInterface $image, GalleryInterface $gallery){
     	$this->image = $image;
     	$this->gallery = $gallery;
   	}
@@ -39,9 +41,10 @@ class ImagesController extends BaseController {
 	 *
 	 * @return Response
 	 */
-	public function store($gallery_id)
-	{
-		//
+	public function store($gallery_id){
+		$input = Input::all();
+		$image = $this->image->storeInGallery($gallery_id, $input);
+        return Response::json(array('success' => true, 'file' => asset($image->largethumb), 'name' => $image->name, 'id' => $image->id));
 	}
 
 	/**
@@ -51,8 +54,7 @@ class ImagesController extends BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($gallery_id, $id)
-	{
+	public function edit($gallery_id, $id){
 		$gallery = $this->gallery->findById($gallery_id);
 		$image = $this->image->findByIdInGallery($gallery->id, $id);
    		$this->layout->content = View::make('admin.images.edit')->with(compact('gallery','image'));//
@@ -65,8 +67,7 @@ class ImagesController extends BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($gallery_id, $id)
-	{
+	public function update($gallery_id, $id){
 		//
 	}
 
@@ -77,8 +78,7 @@ class ImagesController extends BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($gallery_id, $id)
-	{
+	public function destroy($gallery_id, $id){
 		//
 	}
 
