@@ -125,6 +125,7 @@ return array(
       /*Jeffrey Way laravel generators service provider*/
       	'Way\Generators\GeneratorsServiceProvider',
       	'Repositories\Services\Providers\EloquentServiceProvider',
+      	'Intervention\Image\ImageServiceProvider'
 
 	),
 

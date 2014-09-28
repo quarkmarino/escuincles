@@ -43,7 +43,7 @@ class Gallery extends \Eloquent {
 	//get the galleries folder's path for the associated images
 	public function getImagesPath($absolute = false, $imagesDir = 'images/'){
 		//defines images/galleries/{gallery_id}_{gallery_name}/
-		$path = $imagesDir . 'galleries/' . $this->id . '_' . $this->name . '/';
+		$path = $imagesDir . 'galleries/' . $this->id . '_' . str_replace(' ', '_', $this->name) . '/';
 		
 		//defines file system absolute path
 		$abs_path = public_path() . '/' . $path;

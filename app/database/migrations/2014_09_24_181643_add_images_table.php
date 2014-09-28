@@ -14,7 +14,9 @@ class AddImagesTable extends Migration {
 	{
 		Schema::table('images', function(Blueprint $table)
 		{
+			$table->string('largethumb', 255);
 			$table->boolean('main_image');
+			$table->string('dirname', 16);
 		});
 	}
 
@@ -28,7 +30,9 @@ class AddImagesTable extends Migration {
 	{
 		Schema::table('images', function(Blueprint $table)
 		{
+			$table->dropColumn('largethumb');
 			$table->dropColumn('main_image');
+			$table->dropColumn('dirname');
 		});
 	}
 

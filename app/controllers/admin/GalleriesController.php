@@ -57,8 +57,8 @@ class GalleriesController extends BaseController{
        */
   public function edit($id){
     $gallery = $this->gallery->findById($id);
-    $image = $this->image->instance();
-    $this->layout->content = View::make('admin.galleries.edit')->with(compact('gallery','image'));
+    $imageInstance = $this->image->instance();
+    $this->layout->content = View::make('admin.galleries.edit')->with(compact('gallery','imageInstance'));
   }
   
   /**

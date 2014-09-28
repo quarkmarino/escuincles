@@ -8,6 +8,7 @@ use Repositories\Interfaces\GalleryInterface;
 use View;
 use Input;
 use Response;
+use Redirect;
 
 
 class ImagesController extends BaseController{
@@ -16,24 +17,10 @@ class ImagesController extends BaseController{
 	protected $gallery;
 	protected $layout = 'admin.images.layouts.image';
 
-
 	public function __construct(ImageInterface $image, GalleryInterface $gallery){
     	$this->image = $image;
     	$this->gallery = $gallery;
   	}
-
-
-	/**
-	 * Display a listing of the resource.
-	 * GET /admin/Galeries/{id}/images
-	 *
-	 * @return Response
-	 */
-  	public function index($gallery_id){
-  		$gallery = $this->gallery->findById($gallery_id);
-   		$images = $this->image->findAllByGallery($gallery_id);
-   		$this->layout->content = View::make('admin.images.index')->with(compact('gallery', 'images'));
-	}
 
 	/**
 	 * Store a newly created resource in storage.
@@ -44,7 +31,10 @@ class ImagesController extends BaseController{
 	public function store($gallery_id){
 		$input = Input::all();
 		$image = $this->image->storeInGallery($gallery_id, $input);
-        return Response::json(array('success' => true, 'file' => asset($image->largethumb), 'name' => $image->name, 'id' => $image->id));
+		if($image->main_image == 1)
+			return Redirect::route('galleries.edit', $gallery_id);
+		else
+        	return Response::json(array('success' => true, 'file' => asset($image->slide), 'name' => $image->name, 'id' => $image->id, 'gallery' => array( 'id' => $image->gallery->id )));
 	}
 
 	/**
@@ -79,7 +69,8 @@ class ImagesController extends BaseController{
 	 * @return Response
 	 */
 	public function destroy($gallery_id, $id){
-		//
+		$this->image->destroyInGallery($gallery_id, $id);
+		return Redirect::route('galleries.edit', $gallery_id);//->with('success', 'The image has been deleted');
 	}
 
 }

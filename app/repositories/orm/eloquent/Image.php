@@ -114,7 +114,7 @@ class Image implements ImageInterface {
   }*/
 
   public function destroyInGallery($gallery_id, $id){
-    $image = $this->findByIdIn($gallery_id, $id);
+    $image = $this->findByIdInGallery($gallery_id, $id);
     return $image->delete();
   }
 

@@ -16,7 +16,7 @@ Route::get('/', 'Controllers\HomeController@index');
 Route::resource('galleries', 'Controllers\Admin\GalleriesController', array('only' => array('index', 'edit')));
 Route::get('galleries/{galleries}/delete', array('uses' =>'Controllers\Admin\GalleriesController@destroy', 'as' =>'galleries.destroy'));
 
-Route::resource('galleries.images', 'Controllers\Admin\Gallery\ImagesController', array('only' => array('index', 'edit')));
+Route::resource('galleries.images', 'Controllers\Admin\Gallery\ImagesController', array('only' => array('edit')));
 Route::get('galleries/{galleries}/images/{images}/delete', array('uses' =>'Controllers\Admin\Gallery\ImagesController@destroy', 'as' =>'galleries.images.destroy'));
   
 Route::group(array('before' => 'csrf'), function() {

@@ -1,5 +1,5 @@
 	<!-- feature columns -->
-	<section class="feature-columns row clearfix">
+	<section class="feature-columns row clearfix" id="gallery-images">
 		@foreach($gallery->images as $image)
 			@include('admin.images.partials._thumb')
 		@endforeach

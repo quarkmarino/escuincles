@@ -8,7 +8,7 @@ use Input;
 use File;
 
 class Image extends Eloquent {
-	protected $fillable = array('gallery_id','author_id', 'name', 'comment', 'tags', 'status', 'main_image');
+	protected $fillable = array('gallery_id','author_id', 'name', 'comment', 'tags', 'status', 'main_image', 'file', 'dirname');
 	
 	//updates the parent 'updated_at' timestamps on models change
 	protected $touches = array('gallery');
@@ -24,10 +24,10 @@ class Image extends Eloquent {
 			//if an image file is received from form and the "file" path attribute is defined
 			if(Input::hasFile('file') && !empty($image->file)){
 				//create different image sizes
-				$image->largethumb = $image->grabImage('largethumb', array(250, 185));
+				$image->largethumb = $image->grabImage('largethumb', array(255, 255));
 				$image->thumb = $image->grabImage('thumb', 100);
 				$image->minithumb = $image->grabImage('minithumb', array(40, 30));
-				$image->slide = $image->grabImage('slide', array(757, 478));
+				$image->slide = $image->grabImage('slide', array(391, 255));
 			}
 		});
 
@@ -65,7 +65,6 @@ class Image extends Eloquent {
 	
 	//sets the "file" path atribute from the original image received from form
 	public function setFileAttribute($value){
-		dd($value);
 		//if a image "file" is received from the form
 		if(Input::hasFile('file')){
 			//instantiates an Intervention Image object from temp received file
