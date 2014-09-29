@@ -7,12 +7,12 @@ class GalleryValidator extends Validation{
 	/**
 	* Validation rules
 	*/
-/*	public static $rules = array(
+	public static $rules = array(
 		'name' => 'required|alpha_num_spaces',
-		'tags' => 'required',
+		/*'tags' => 'required',
 		'phone' => 'alpha_dash|max:16',
-		'status' => 'required|in:0,1',
-	);*/
+		'status' => 'required|in:0,1',*/
+	);
 
 	/**
 	* Validation messages

@@ -41,31 +41,22 @@
 	});
 
 	function showRequest(formData, jqForm, options){
-		$(".alert-box").empty();
-		$("span.spinner").css('display', 'inline');
-		//$("#output").css('display','none');
+		$("img.image-resource.form-loader").css('display', 'inline');
 		return true;
 	}
 	
 	function showResponse(response, statusText, xhr, $form){
 		if(response.success == false){
-			var arr = response.errors;
-			$('div.text-error').prepend('<h3>' + response.error + '</h3>');
-			$("ul.errors").empty();
-			$.each(arr, function(index, value){
+			var errors = response.errors;
+			$("div.alert").empty().hide();
+			$.each(errors, function(index, value){
+				//alert(index + ': ' + value);
 				if (value.length != 0){
-					$("ul.errors").append('<li>' + value +'</li>');
+					$("div.alert.form-error-image-" + index).html(value).show();
 				}
 			});
-			//$("#validation-errors").show();
 		}
 		else{
-			/*var lastImagesRow = $('section.portfolio').last();
-			if(lastImagesRow.children().length >= 2){
-				$('#productImages').append('<section class="row-fluid portfolio thumbnails"></section>');
-				lastImagesRow = $('section.portfolio').last();
-			}*/
-			//lastImagesRow.append(createItem(response));
 			var galleryImageSection = $('#gallery-images');
 			galleryImageSection.append(createItem(response));
 			$('#form-input-image-name').val('');
@@ -76,17 +67,26 @@
 		
 			
 		}
-		$("span.spinner").css('display', 'none');
+		$("img.image-resource.form-loader").css('display', 'none');
 	}
 
 	function createItem(response){
 		var item = 
 		'<article class="feature-col col-md-4">' +
-			'<a href="/galleries/' + response.gallery.id + '/images/' + response.id + '" class="thumbnail linked">' +
+			'<a href="/galleries/' + response.gallery.id + '/images/' + response.id + '" onclick="populate_and_open_modal(event, \'modal-content-' + response.id + '\');" class="thumbnail linked">' +
 				'<div class="image-container">' +
-					'<img src="' + response.file + '" alt="' + response.name + '" class="img-rounded">' + 
+					'<img src="' + response.slide + '" alt="' + response.name + '" class="img-rounded" data-img-src="' + response.slide + '">' + 
+				'</div>' +
+				'<div class="caption">' +
+					'<h5>' + response.name + '</h5>' +
+					'<p>' + response.comment + '</p>' + 
 				'</div>' +
 			'</a>' +
+			'<div class="content-to-populate-in-modal" id="modal-content-' + response.id + '">' +
+				'<img src="' + response.file + '" alt="' + response.name + '" class="lazy full-width" data-img-src="' + response.file + '">' +
+				'<h5>' + response.name + '</h5>' +
+				'<p>' + response.comment + '</p>' +
+			'</div>' +
 		'</article>';
 		return item;
 	}

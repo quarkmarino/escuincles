@@ -12,7 +12,7 @@ class ImageValidator extends Validation{
 		'name' => 'required|alpha_num_spaces',
 		'comment' => 'required',
 		'status' => 'integer|in:0,1',
-		'file' => 'image|max:12000000',
+		'file' => 'image|required|max:12000000',
 	);
 
 	/**

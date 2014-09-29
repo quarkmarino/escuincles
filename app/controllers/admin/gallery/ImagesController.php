@@ -30,16 +30,19 @@ class ImagesController extends BaseController{
 	 * @return Response
 	 */
 	public function store($gallery_id){
+		$input = Input::all();
 		try{
-			$input = Input::all();
 			$image = $this->image->storeInGallery($gallery_id, $input);
 			if($image->main_image == 1)
-				return Redirect::route('galleries.edit', $gallery_id);
+				return Redirect::route('galleries.edit', $image->gallery_id);
 			else
-				return Response::json(array('success' => true, 'file' => asset($image->slide), 'name' => $image->name, 'id' => $image->id, 'gallery' => array( 'id' => $image->gallery->id )));	
+				return Response::json(array('success' => true, 'id' => $image->id, 'slide' => asset($image->slide), 'file' => asset($image->file), 'name' => $image->name, 'comment' => $image->comment, 'gallery' => array( 'id' => $image->gallery->id )));	
 		}
 		catch(ValidationException $e){
-			return Response::json(array('success' => false, 'error' => 'Los datos provistos no son correctos.', 'errors' => $e->getErrors()->toArray()));
+			if(isset($input['main_image']) && $input['main_image'] == 1)
+				return Redirect::route('galleries.edit', $gallery_id)->withErrors($e->getErrors());
+			else
+				return Response::json(array('success' => false, 'error' => 'Los datos provistos no son correctos.', 'errors' => $e->getErrors()->toArray()));
 		}
 	}
 

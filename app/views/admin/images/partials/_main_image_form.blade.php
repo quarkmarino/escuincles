@@ -7,6 +7,11 @@
 			{{ Form::hidden('main_image', true) }}
 			<div class="form-group">
 				{{ Form::file('file', array('id' => 'form-input-file')); }}
+				@if($errors->first('file'))
+					<div class="alert" style="display: block;">{{ $errors->first('file') }}</div>
+				@else
+					<div class="alert"></div>
+				@endif
 			</div>
 		</div>
 		<div class="col-md-10">

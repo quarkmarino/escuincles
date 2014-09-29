@@ -10,7 +10,8 @@
 				<!-- form left col -->
 				<div class="col-md-6">
 					<div class="form-group">
-						{{ Form::text('name', Input::old('name'), array('placeholder' => 'Nombre de la imagen', 'class' => 'text-field form-control validate-field required', 'id' => 'form-input-image-name', 'data-validation-type' => 'string')) }}
+						{{ Form::text('name', Input::old('name'), array('placeholder' => 'Nombre de la imagen', 'class' => 'text-field form-control', 'id' => 'form-input-image-name')) }}
+						<div class="alert form-error-image-name"></div>
 					</div>  
 					
 					<div class="form-group">
@@ -21,25 +22,29 @@
 						<label class="radio">
 							{{ Form::radio('status', '0', array( 'id' => 'form-input-image-status' )) }} La imagen estará <span class="text-warning">oculto</span> al publico
 						</label>
+						<div class="alert form-error-image-status"></div>
 					</div>
 					<div class="form-group">
 						{{ Form::file('file', array('id' => 'form-input-image-file')) }}
+						<div class="alert form-error-image-file"></div>
 					</div>
 				</div><!-- end: form left col -->
 				<!-- form right col -->
 				<div class="col-md-6">
 					<div class="form-group">
-						{{ Form::text('tags', Input::old('tags'), array('placeholder' => 'Etiquetas', 'class' => 'text-field form-control validate-field', 'id' => 'form-input-image-tags', 'data-validation-type' => 'string')) }}
+						{{ Form::text('tags', Input::old('tags'), array('placeholder' => 'Etiquetas', 'class' => 'text-field form-control', 'id' => 'form-input-image-tags')) }}
+						<div class="alert form-error-image-tags"></div>
 					</div>
 					<div class="form-group">
-						{{ Form::textarea('description', Input::old('description'), array('placeholder' => 'Descripción de la imagen', 'class' => 'form-control validate-field required', 'id' => 'form-input-image-description', 'rows' => 3)) }}
+						{{ Form::textarea('comment', Input::old('comment'), array('placeholder' => 'Comentario de la imagen', 'class' => 'form-control', 'id' => 'form-input-image-comment', 'rows' => 3)) }}
+						<div class="alert form-error-image-comment"></div>
 					</div>
 				</div><!-- end: form right col -->
 		    {{--</div><!-- end: form top row -->--}}
 		    <!-- form bottom row -->
 				<div class="col-md-12">
 					<div class="form-group">
-						<img src="/assets/images/theme_images/loader-form.GIF" class="form-loader">
+						<img src="/assets/images/theme_images/loader-form.GIF" class="image-resource form-loader">
 						<button type="submit" class="btn btn-sm btn-outline-inverse" id="image-load_btn">Agregar Imagen a Galería</button>
 					</div> 
 					<div class="form-group form-general-error-container"></div>           

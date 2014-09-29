@@ -4,6 +4,7 @@ namespace Controllers\Admin;
 use Controllers\BaseController;
 use Repositories\Interfaces\GalleryInterface;
 use Repositories\Interfaces\ImageInterface;
+use Repositories\Errors\Exceptions\ValidationException as ValidationException;
 use View;
 use Input;
 use Redirect;
@@ -69,9 +70,14 @@ class GalleriesController extends BaseController{
        * @return Response
        */
   public function update($id){
-    $input = Input::all();
-	$gallery = $this->gallery->update($id, $input);
-	return Redirect::route('galleries.edit', $gallery->id);
+  	try{
+	    $input = Input::all();
+		$gallery = $this->gallery->update($id, $input);
+		return Redirect::route('galleries.edit', $gallery->id);
+  	}
+  	catch(ValidationException $e){
+  		return Redirect::route('galleries.edit', $id)->withErrors($e->getErrors());
+  	}
   }
   
   /**
