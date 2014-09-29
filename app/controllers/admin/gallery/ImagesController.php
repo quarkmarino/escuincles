@@ -5,6 +5,7 @@ namespace Controllers\Admin\Gallery;
 use Controllers\BaseController;
 use Repositories\Interfaces\ImageInterface;
 use Repositories\Interfaces\GalleryInterface;
+use Repositories\Errors\Exceptions\ValidationException as ValidationException;
 use View;
 use Input;
 use Response;
@@ -29,12 +30,17 @@ class ImagesController extends BaseController{
 	 * @return Response
 	 */
 	public function store($gallery_id){
-		$input = Input::all();
-		$image = $this->image->storeInGallery($gallery_id, $input);
-		if($image->main_image == 1)
-			return Redirect::route('galleries.edit', $gallery_id);
-		else
-        	return Response::json(array('success' => true, 'file' => asset($image->slide), 'name' => $image->name, 'id' => $image->id, 'gallery' => array( 'id' => $image->gallery->id )));
+		try{
+			$input = Input::all();
+			$image = $this->image->storeInGallery($gallery_id, $input);
+			if($image->main_image == 1)
+				return Redirect::route('galleries.edit', $gallery_id);
+			else
+				return Response::json(array('success' => true, 'file' => asset($image->slide), 'name' => $image->name, 'id' => $image->id, 'gallery' => array( 'id' => $image->gallery->id )));	
+		}
+		catch(ValidationException $e){
+			return Response::json(array('success' => false, 'error' => 'Los datos provistos no son correctos.', 'errors' => $e->getErrors()->toArray()));
+		}
 	}
 
 	/**

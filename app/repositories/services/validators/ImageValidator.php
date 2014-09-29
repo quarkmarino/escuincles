@@ -7,12 +7,13 @@ class ImageValidator extends Validation{
 	/**
 	* Validation rules
 	*/
-	/*public static $rules = array(
+	public static $rules = array(
+		'gallery_id' => 'integer|exists:galleries,id',
 		'name' => 'required|alpha_num_spaces',
-		'tags' => 'required',
-		'phone' => 'alpha_dash|max:16',
-		'status' => 'required|in:0,1',
-	);*/
+		'comment' => 'required',
+		'status' => 'integer|in:0,1',
+		'file' => 'image|max:12000000',
+	);
 
 	/**
 	* Validation messages
