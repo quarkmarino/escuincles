@@ -26,8 +26,9 @@ $app = new Illuminate\Foundation\Application;
 
 $env = $app->detectEnvironment(array(
 
-	'development' => array('vm-0.quarkmarino.koding.kd.io'),
+	'remote_dev' => array('vm-0.quarkmarino.koding.kd.io'),
 	'developmentjam' => array('olimpo'),
+	'developmentquark' => array('tiny-pc'),
 
 ));
 

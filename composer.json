@@ -8,7 +8,8 @@
 		"intervention/image": "1.*"
 	},
     "require-dev": {
-      "Way/generators": "~2.0"
+      "Way/generators": "~2.0",
+      "fzaninotto/faker": "1.4.*@dev"
     },
 	"autoload": {
 		"classmap": [
