@@ -8,10 +8,11 @@ class GalleryValidator extends Validation{
 	* Validation rules
 	*/
 	public static $rules = array(
-		'name' => 'required|alpha_num_spaces',
-		/*'tags' => 'required',
-		'phone' => 'alpha_dash|max:16',
-		'status' => 'required|in:0,1',*/
+		'title' => 'required|alpha_num_spaces',
+		'tags' => 'required',
+		'comment' => 'required',
+		'description' => 'required',
+		'status' => 'integer|in:0,1',
 	);
 
 	/**

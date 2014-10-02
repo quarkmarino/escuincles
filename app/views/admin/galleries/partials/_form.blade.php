@@ -13,14 +13,14 @@
 @endif
 		<!-- form left col -->
 		<div class="col-md-6">
-			<div class="form-group">
+			{{--<div class="form-group">
 				{{ Form::text('name', Input::old('name'), array('placeholder' => 'Nombre de la galería', 'class' => 'text-field form-control', 'id' => 'form-input-name', 'data-validation-type' => 'string')) }}
 				@if($errors->first('name'))
 					<div class="alert" style="display: block;">{{ $errors->first('name') }}</div>
 				@else
 					<div class="alert"></div>
 				@endif
-			</div>
+			</div>--}}
 			<div class="form-group">
 				{{ Form::text('title', Input::old('title'), array('placeholder' => 'Titulo', 'class' => 'text-field form-control', 'id' => 'form-input-title', 'data-validation-type' => 'string')) }}
 				@if($errors->first('title'))
@@ -30,7 +30,17 @@
 				@endif
 			</div>
 			<div class="form-group">
+				{{ Form::text('comment', Input::old('comment'), array('placeholder' => 'Comentario', 'class' => 'text-field form-control', 'id' => 'form-input-comment', 'data-validation-type' => 'string')) }}
+				@if($errors->first('comment'))
+					<div class="alert" style="display: block;">{{ $errors->first('comment') }}</div>
+				@else
+					<div class="alert"></div>
+				@endif
+			</div>
+			<div class="form-group">
+				<br />
 				<label class="control-label" for="form-input-status">Visibilidad</label>
+				<br />
 				<label class="radio">
 					{{ Form::radio('status', '1', true, array('id' => 'form-input-status')) }} La galería estará <span class="text-success">visible</span> al publico
 				</label>
@@ -46,14 +56,6 @@
 		</div><!-- end: form left col -->
 		<!-- form right col -->
 		<div class="col-md-6">
-			<div class="form-group">
-				{{ Form::text('comment', Input::old('comment'), array('placeholder' => 'Comentario', 'class' => 'text-field form-control', 'id' => 'form-input-comment', 'data-validation-type' => 'string')) }}
-				@if($errors->first('comment'))
-					<div class="alert" style="display: block;">{{ $errors->first('comment') }}</div>
-				@else
-					<div class="alert"></div>
-				@endif
-			</div>
 			<div class="form-group">
 				{{ Form::text('tags', Input::old('tags'), array('placeholder' => 'Etiquetas', 'class' => 'text-field form-control', 'id' => 'form-input-name', 'data-validation-type' => 'string')) }}
 				@if($errors->first('tags'))

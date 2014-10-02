@@ -16,7 +16,8 @@ class CreateGalleriesTable extends Migration {
 		{
 			$table->increments('id');
 			$table->integer('author_id')->unsigned()->index();
-			$table->string('name', 64);
+			$table->string('title', 64);
+			$table->string('comment', 255);
 			$table->text('description');
 			$table->text('tags');
 			$table->integer('status');

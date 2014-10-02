@@ -13,6 +13,7 @@ class ImageValidator extends Validation{
 		'comment' => 'required',
 		'status' => 'integer|in:0,1',
 		'file' => 'image|required|max:12000000',
+		'main_image' => 'required|boolean',
 	);
 
 	/**

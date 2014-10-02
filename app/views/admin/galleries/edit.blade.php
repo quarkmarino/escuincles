@@ -8,7 +8,7 @@
 		<section id="main-content" class="clearfix">
 			<article id="gallery" class="section-wrapper">
 				<div class="content-wrapper clearfix">
-					<h2 class="section-title">Galeria "{{ $gallery->name }}"</h2>
+					<h2 class="section-title">Galeria "{{ $gallery->title }}"</h2>
 					@include("admin.galleries.partials._form")
 					<h3 class="section-title clearfix">Imagenes</h3>
 					@include("admin.images.partials._form")

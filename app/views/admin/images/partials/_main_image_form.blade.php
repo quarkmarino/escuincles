@@ -1,8 +1,13 @@
 <div class="contact-details col-sm-5 col-md-3">
+	{{--<ul class="errors">
+		@foreach($errors->all() as $message)
+		<li>{{ $message }}</li>
+		@endforeach
+	</ul>--}}
 	{{ Form::model($imageInstance, array('route' => array('galleries.images.store', $gallery->id), 'class' => 'form-style validate-form clearfix', 'id' => 'main-image-attach-form', 'files' => true) ) }}
 		<div class="col-md-12">
-			{{ Form::hidden('name', $gallery->name) }}
-			{{ Form::hidden('comment', $gallery->comment) }}
+			{{ Form::hidden('name', $gallery->title) }}
+			{{ Form::hidden('comment', 'Main_image, that belongs to Gallery '.$gallery->id) }}
 			{{ Form::hidden('status', true) }}
 			{{ Form::hidden('main_image', true) }}
 			<div class="form-group">

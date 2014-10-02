@@ -132,4 +132,34 @@ class Image extends Eloquent {
 		//returns path as requested
 		return $absolute ? $abs_path : $path;
 	}
+
+	public function getFileAttribute($value){
+		if(empty($value))
+			return '/images/no-image.jpg';
+		return $value;
+	}
+
+	public function getLargethumbAttribute($value){
+		if(empty($value))
+			return '/images/no-image-largethumb.jpg';
+		return $value;
+	}
+
+	public function getThumbAttribute($value){
+		if(empty($value))
+			return '/images/no-image-thumb.jpg';
+		return $value;
+	}
+
+	public function getMinithumbAttribute($value){
+		if(empty($value))
+			return '/images/no-image-minithumb.jpg';
+		return $value;
+	}
+
+	public function getSlideAttribute($value){
+		if(empty($value))
+			return '/images/no-image-slide.jpg';
+		return $value;
+	}
 }
