@@ -28,7 +28,7 @@ class CreateImagesTable extends Migration {
 			$table->text('comment');
 			$table->boolean('main_image');
 			$table->timestamps();
-			$table->foreign('gallery_id')->references('id')->on('galleries');
+			$table->foreign('gallery_id')->references('id')->on('galleries')->onUpdate('cascade');
 		});
 	}
 

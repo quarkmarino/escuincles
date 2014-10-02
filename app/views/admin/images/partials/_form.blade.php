@@ -5,6 +5,7 @@
 	@elseif(isset($image))
 		{{ Form::model($image, array('route' => array('galleries.images.update', $gallery->id, $image->id), 'class' => 'form-style validate clearfix', 'id' => 'image-edit-form', 'method' => 'put') ) }}
 	@endif
+			{{ Form::hidden('main_image', 0) }}
 			{{--<!-- form top row -->
 			<div class="col-md-12">--}}
 				<!-- form left col -->

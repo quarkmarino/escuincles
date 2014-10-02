@@ -60,7 +60,7 @@
 			var galleryImageSection = $('#gallery-images');
 			galleryImageSection.append(createItem(response));
 			$('#form-input-image-name').val('');
-			$('#form-input-image-description').val('');
+			$('#form-input-image-comment').val('');
 			$('#form-input-image-tags').val('');
 			$('#form-input-image-file').val('');
 			//$("#output").css('display','block');
@@ -73,17 +73,18 @@
 	function createItem(response){
 		var item = 
 		'<article class="feature-col col-md-4">' +
-			'<a href="/galleries/' + response.gallery.id + '/images/' + response.id + '" onclick="populate_and_open_modal(event, \'modal-content-' + response.id + '\');" class="thumbnail linked">' +
+			'<a href="/galleries/' + response.gallery.id + '/images/' + response.id + '/edit" title="Modificar imagen"><i class="fa fa-edit"></i></a> ' +
+			'<a href="/galleries/' + response.gallery.id + '/images/' + response.id + '/delete" title="Eliminar imagen de galería"><i class="fa fa-remove"></i></a>' +
+			'<a href="" onclick="populate_and_open_modal(event, \'modal-content-' + response.id + '\');" class="thumbnail linked">' +
 				'<div class="image-container">' +
 					'<img src="' + response.slide + '" alt="' + response.name + '" class="img-rounded" data-img-src="' + response.slide + '">' + 
 				'</div>' +
 				'<div class="caption">' +
 					'<h5>' + response.name + '</h5>' +
-					'<p>' + response.comment + '</p>' + 
 				'</div>' +
 			'</a>' +
 			'<div class="content-to-populate-in-modal" id="modal-content-' + response.id + '">' +
-				'<img src="' + response.file + '" alt="' + response.name + '" class="lazy full-width" data-img-src="' + response.file + '">' +
+				'<img src="' + response.file + '" alt="' + response.name + '" class="full-width" data-img-src="' + response.file + '">' +
 				'<h5>' + response.name + '</h5>' +
 				'<p>' + response.comment + '</p>' +
 			'</div>' +

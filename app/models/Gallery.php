@@ -6,7 +6,7 @@ use Eloquent;
 use File;
 
 class Gallery extends \Eloquent {
-	protected $fillable = array('author_id', 'name', 'comment', 'status', 'tags', 'status', 'description', 'title');
+	protected $fillable = array('author_id', 'title', 'comment', 'status', 'tags', 'status', 'description');
 	
 	//functionality that is run just after class contruction
 	public static function boot(){
@@ -21,6 +21,10 @@ class Gallery extends \Eloquent {
 			$path = $gallery->getImagesPath(true);
 			if(File::exists($path))
 				File::deleteDirectory($path);
+			//if(no more images on gallery)
+				//return true
+			//otherwise
+				//return false
 		});
 	}
 	
@@ -42,8 +46,8 @@ class Gallery extends \Eloquent {
 	
 	//get the galleries folder's path for the associated images
 	public function getImagesPath($absolute = false, $imagesDir = 'images/'){
-		//defines images/galleries/{gallery_id}_{gallery_name}/
-		$path = $imagesDir . 'galleries/' . $this->id . '_' . str_replace(' ', '_', $this->name) . '/';
+		//defines images/galleries/{gallery_id}_{gallery_title}/
+		$path = $imagesDir . 'galleries/' . $this->id . '_' . str_replace(' ', '_', $this->title) . '/';
 		
 		//defines file system absolute path
 		$abs_path = public_path() . '/' . $path;
