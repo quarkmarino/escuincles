@@ -1,7 +1,7 @@
 <!-- GALLERY CREATE/EDIT FORM -->
 @if( !isset($gallery) )
 	<div class="col-sm-12 col-md-12">
-	{{ Form::open( array('route' => 'galleries.store', 'class' => 'form-style clearfix', 'id' => 'gallery-create-form', 'role' => 'form') ) }}
+	{{ Form::open( array('route' => 'admin.galleries.store', 'class' => 'form-style clearfix', 'id' => 'gallery-create-form', 'role' => 'form') ) }}
 @else
 	@if( $gallery->main_image === null )
 		@include("admin.images.partials._main_image_form")
@@ -9,7 +9,7 @@
 		@include("admin.images.partials._main_image_thumb")
 	@endif
 	<div class="col-sm-7 col-md-9">
-	{{ Form::model($gallery, array('route' => array('galleries.update', $gallery->id), 'class' => 'form-style clearfix', 'id' => 'gallery-edit-form', 'method' => 'put') ) }}
+	{{ Form::model($gallery, array('route' => array('admin.galleries.update', $gallery->id), 'class' => 'form-style clearfix', 'id' => 'gallery-edit-form', 'method' => 'put') ) }}
 @endif
 		<!-- form left col -->
 		<div class="col-md-6">

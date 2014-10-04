@@ -11,8 +11,8 @@ class UsersTableSeeder extends Seeder {
 
 		foreach(range(1, 1) as $index)
 		{
-			User::create([
-				'username' => 'quarkmarino',
+			Models\User::create([
+				'username' => 'admin',
 				'password' => Hash::make('2515'),
 				'email' => 'quarkmarino@gmail.com',
 			]);

@@ -1,9 +1,9 @@
 <!-- IMAGES CREATE/EDIT FORM -->
 <div class="col-sm-12 col-md-12">
 	@if(isset($imageInstance))
-		{{ Form::model($imageInstance, array('route' => array('galleries.images.store', $gallery->id), 'class' => 'form-style validate clearfix', 'id' => 'image-create-form') ) }}
+		{{ Form::model($imageInstance, array('route' => array('admin.galleries.images.store', $gallery->id), 'class' => 'form-style validate clearfix', 'id' => 'image-create-form') ) }}
 	@elseif(isset($image))
-		{{ Form::model($image, array('route' => array('galleries.images.update', $gallery->id, $image->id), 'class' => 'form-style validate clearfix', 'id' => 'image-edit-form', 'method' => 'put') ) }}
+		{{ Form::model($image, array('route' => array('admin.galleries.images.update', $gallery->id, $image->id), 'class' => 'form-style validate clearfix', 'id' => 'image-edit-form', 'method' => 'put') ) }}
 	@endif
 			{{ Form::hidden('main_image', 0) }}
 			{{--<!-- form top row -->

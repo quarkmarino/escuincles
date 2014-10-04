@@ -34,13 +34,13 @@ class ImagesController extends BaseController{
 		try{
 			$image = $this->image->storeInGallery($gallery_id, $input);
 			if($image->main_image == 1)
-				return Redirect::route('galleries.edit', $image->gallery_id);
+				return Redirect::route('admin.galleries.edit', $image->gallery_id);
 			else
 				return Response::json(array('success' => true, 'id' => $image->id, 'slide' => asset($image->slide), 'file' => asset($image->file), 'name' => $image->name, 'comment' => $image->comment, 'gallery' => array( 'id' => $image->gallery->id )));	
 		}
 		catch(ValidationException $e){
 			if(isset($input['main_image']) && $input['main_image'] == 1)
-				return Redirect::route('galleries.edit', $gallery_id)->withErrors($e->getErrors());
+				return Redirect::route('admin.galleries.edit', $gallery_id)->withErrors($e->getErrors());
 			else
 				return Response::json(array('success' => false, 'error' => 'Los datos provistos no son correctos.', 'errors' => $e->getErrors()->toArray()));
 		}
@@ -71,10 +71,10 @@ class ImagesController extends BaseController{
 			$input = Input::all();
 			$gallery = $this->gallery->findById($gallery_id);
 			$image = $this->image->updateInGallery($gallery_id, $id, $input);
-			return Redirect::route('galleries.edit', $gallery->id);
+			return Redirect::route('admin.galleries.edit', $gallery->id);
 		}
 		catch(ValidationException $e){
-			return Redirect::route('galleries.images.edit', array($gallery_id, $id))->withErrors($e->getErrors())->withInput();
+			return Redirect::route('admin.galleries.images.edit', array($gallery_id, $id))->withErrors($e->getErrors())->withInput();
 		}
 	}
 
@@ -87,7 +87,7 @@ class ImagesController extends BaseController{
 	 */
 	public function destroy($gallery_id, $id){
 		$this->image->destroyInGallery($gallery_id, $id);
-		return Redirect::route('galleries.edit', $gallery_id);//->with('success', 'The image has been deleted');
+		return Redirect::route('admin.galleries.edit', $gallery_id);//->with('success', 'The image has been deleted');
 	}
 
 }

@@ -9,9 +9,15 @@
   <div id="mobile-menu-icon" class="visible-xs" onClick="toggle_main_menu();"><span class="glyphicon glyphicon-th"></span></div>
   
   <ul id="main-menu">
-  {{--@foreach($galleries as $gallery)
-    <li id="menu-item-text" class="menu-item scroll"><a href="#gallery-{{ $gallery->id }}">{{ $gallery->name }}</a></li>
-  @endforeach--}}
+  	<li id="menu-item-info" class="menu-item scroll"><a href="/#info">Información</a></li>
+    <li id="menu-item-members" class="menu-item scroll"><a href="/#members">Personal</a></li>
+    <li id="menu-item-activities" class="menu-item scroll"><a href="/#activities">Actividades</a></li>
+    <li id="menu-item-galleries" class="menu-item scroll"><a href="/#galleries">Galerias</a></li>
+    <li id="menu-item-location" class="menu-item scroll"><a href="/#location">Ubicación</a></li>
+    <li id="menu-item-contact" class="menu-item scroll"><a href="/#contact">Contacto</a></li>
+    @if( Request::is('admin/*') )
+    	<li id="menu-item-logout" class="menu-item">{{ HTML::linkRoute('admin.signout', 'Salir') }}</li>
+    @endif
   </ul><!-- #main-menu -->
   
 </section><!-- #left-sidebar -->

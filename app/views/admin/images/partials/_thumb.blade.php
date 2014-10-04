@@ -1,6 +1,6 @@
 <article class="feature-col col-md-4">
-	<a href="{{ route('galleries.images.edit', array($image->gallery->id, $image->id), false) }}" title="Modificar imagen"><i class="fa fa-edit"></i></a>
-	<a href="{{ route('galleries.images.destroy', array($image->gallery->id, $image->id), false) }}" title="Eliminar imagen de galería"><i class="fa fa-remove"></i></a>
+	<a href="{{ route('admin.galleries.images.edit', array($image->gallery->id, $image->id), false) }}" title="Modificar imagen"><i class="fa fa-edit"></i></a>
+	<a href="{{ route('admin.galleries.images.destroy', array($image->gallery->id, $image->id), false) }}" title="Eliminar imagen de galería"><i class="fa fa-remove"></i></a>
 	<a href="" onclick="populate_and_open_modal(event, 'modal-content-{{ $image->id }}');" class="thumbnail linked">
 		<div class="image-container">
 			{{ HTML::image($image->slide, $image->name, array('class' => 'lazy item-thumbnail', 'title' => $image->name, 'data-img-src' => asset($image->slide))); }}

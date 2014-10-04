@@ -47,10 +47,10 @@ class GalleriesController extends BaseController{
 		try{
 			$input = Input::all();
 			$gallery = $this->gallery->store(1,$input);
-			return Redirect::route('galleries.edit',$gallery->id);
+			return Redirect::route('admin.galleries.edit',$gallery->id);
 		}
 		catch(ValidationException $e){
-			return Redirect::route('galleries.index')->withErrors($e->getErrors())->withInput();
+			return Redirect::route('admin.galleries.index')->withErrors($e->getErrors())->withInput();
 		}
 	}
 	
@@ -78,10 +78,10 @@ class GalleriesController extends BaseController{
 		try{
 			$input = Input::all();
 			$gallery = $this->gallery->update($id, $input);
-			return Redirect::route('galleries.edit', $gallery->id);
+			return Redirect::route('admin.galleries.edit', $gallery->id);
 		}
 		catch(ValidationException $e){
-			return Redirect::route('galleries.edit', $id)->withErrors($e->getErrors())->withInput();
+			return Redirect::route('admin.galleries.edit', $id)->withErrors($e->getErrors())->withInput();
 		}
 	}
 	
