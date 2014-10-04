@@ -26,9 +26,10 @@ $app = new Illuminate\Foundation\Application;
 
 $env = $app->detectEnvironment(array(
 
-	'remote_dev' => array('quarkmarino'),
-	'developmentjam' => array('olimpo'),
-	'developmentquark' => array('tiny-pc'),
+	'koging' => array('quarkmarino'),
+	'jam' => array('olimpo'),
+	'qrk' => array('tiny-pc'),
+	'demo' => array('http://polarix-q.com'),
 
 ));
 

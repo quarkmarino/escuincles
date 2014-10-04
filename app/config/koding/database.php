@@ -17,6 +17,8 @@ return array(
 	| choice installed on your machine before you begin development.
 	|
 	*/
+	
+	'default' => 'sqlite',
 
 	'connections' => array(
 
@@ -31,15 +33,10 @@ return array(
 			'prefix'    => '',
 		),
 
-		'pgsql' => array(
-			'driver'   => 'pgsql',
-			'host'     => 'localhost',
-			'database' => 'homestead',
-			'username' => 'homestead',
-			'password' => 'secret',
-			'charset'  => 'utf8',
+		'sqlite' => array(
+			'driver'   => 'sqlite',
+			'database' => __DIR__.'/../../database/demo.sqlite',
 			'prefix'   => '',
-			'schema'   => 'public',
 		),
 
 	),
