@@ -1,5 +1,5 @@
 @section("content")
-<div class="background-image-overlay"></div>
+<!---<div class="background-image-overlay"></div>-->
 
     <div id="outer-background-container" data-default-background-img="assets/images/other_images/bg5.jpg" style="background-image:url(assets/images/other_images/bg5.jpg);"></div>
     <!-- end: #outer-background-container -->    
@@ -10,10 +10,11 @@
 
       <section id="main-content" class="clearfix">
         @include("widgets.intro")
-        @include("widgets.text")
-        @include("widgets.carousel")
-        @include("widgets.grid")
-        @include("widgets.featured")
+        @include("widgets.info")
+        @include("widgets.members")
+        @include("widgets.activities")
+        @include("widgets.galleries")
+        @include("widgets.location")
         @include("widgets.contact")
       </section><!-- #main-content -->
 

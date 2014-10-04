@@ -1,4 +1,4 @@
-<article id="carousel" class="section-wrapper clearfix" data-custom-background-img="assets/images/other_images/bg6.jpg">
+<article id="members" class="section-wrapper clearfix" data-custom-background-img="assets/images/other_images/bg6.jpg">
           <div class="content-wrapper clearfix">
 
               <div id="features-carousel" class="carousel slide with-title-indicators max-height" data-height-percent="70" data-ride="carousel">

@@ -580,6 +580,7 @@ h6 {
 
 #main-content .feature-paragraph {
     font-size:1.1em;
+    text-align: justify;
 }
 
     @media (min-width: 768px) {
@@ -1449,7 +1450,7 @@ h6 {
 
 .modal .modal-content .modal-body {
     padding:15px 20px;
-    text-align: center;
+    text-align: justify;
 }
 
     @media (min-width: 768px) { 

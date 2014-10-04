@@ -77,7 +77,7 @@
 		<div class="col-md-3 pull-right">
 			<div class="form-group">
 				<img src="/assets/images/theme_images/loader-form.GIF" class="form-loader">
-				<button type="submit" class="btn btn-sm btn-outline-inverse">@if( !isset($gallery) ) Crear @else Guardar @endif Galería </button>
+				<button type="submit" class="btn btn-sm btn-outline-inverse">@if( !isset($gallery) ) Crear @else Guardar @endif Galería</button>
 			</div> 
 			<div class="form-group form-general-error-container"></div>           
 		</div><!-- end: form bottom row -->

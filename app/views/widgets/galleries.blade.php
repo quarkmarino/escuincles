@@ -1,8 +1,8 @@
- <article id="featured" class="section-wrapper clearfix" data-custom-background-img="assets/images/other_images/bg3.jpg">
+ <article id="galleries" class="section-wrapper clearfix" data-custom-background-img="assets/images/other_images/bg3.jpg">
           <div class="content-wrapper clearfix">
             <div class="col-sm-11 pull-right">
 
-                <h1 class="section-title">Featured</h1>
+                <h1 class="section-title">Galerias</h1>
               
                 <!-- feature columns -->
                 <section class="feature-columns row clearfix">

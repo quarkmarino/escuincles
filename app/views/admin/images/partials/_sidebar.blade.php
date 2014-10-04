@@ -9,9 +9,7 @@
   <div id="mobile-menu-icon" class="visible-xs" onClick="toggle_main_menu();"><span class="glyphicon glyphicon-th"></span></div>
   
   <ul id="main-menu">
-  @foreach($images as $image)
-    <li id="menu-item-text" class="menu-item scroll"><a href="#image-{{ $image->id }}">{{ $image->name }}</a></li>
-  @endforeach
+	<li id="menu-item-text" class="menu-item scroll">{{ HTML::linkRoute('galleries.edit', $image->gallery->title, $image->gallery_id) }}</li>
   </ul><!-- #main-menu -->
   
 </section><!-- #left-sidebar -->

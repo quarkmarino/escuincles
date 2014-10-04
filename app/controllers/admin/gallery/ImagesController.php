@@ -67,7 +67,15 @@ class ImagesController extends BaseController{
 	 * @return Response
 	 */
 	public function update($gallery_id, $id){
-		//
+		try{
+			$input = Input::all();
+			$gallery = $this->gallery->findById($gallery_id);
+			$image = $this->image->updateInGallery($gallery_id, $id, $input);
+			return Redirect::route('galleries.edit', $gallery->id);
+		}
+		catch(ValidationException $e){
+			return Redirect::route('galleries.images.edit', array($gallery_id, $id))->withErrors($e->getErrors())->withInput();
+		}
 	}
 
 	/**

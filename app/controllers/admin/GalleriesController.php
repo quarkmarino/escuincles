@@ -50,7 +50,7 @@ class GalleriesController extends BaseController{
 			return Redirect::route('galleries.edit',$gallery->id);
 		}
 		catch(ValidationException $e){
-			return Redirect::route('galleries.index')->withErrors($e->getErrors());
+			return Redirect::route('galleries.index')->withErrors($e->getErrors())->withInput();
 		}
 	}
 	
@@ -81,7 +81,7 @@ class GalleriesController extends BaseController{
 			return Redirect::route('galleries.edit', $gallery->id);
 		}
 		catch(ValidationException $e){
-			return Redirect::route('galleries.edit', $id)->withErrors($e->getErrors());
+			return Redirect::route('galleries.edit', $id)->withErrors($e->getErrors())->withInput();
 		}
 	}
 	
