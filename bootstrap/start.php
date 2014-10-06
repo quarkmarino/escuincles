@@ -26,10 +26,10 @@ $app = new Illuminate\Foundation\Application;
 
 $env = $app->detectEnvironment(array(
 
-	'koging' => array('quarkmarino'),
+	'koding' => array('quarkmarino'),
 	'jam' => array('olimpo'),
 	'qrk' => array('tiny-pc'),
-	'demo' => array('http://polarix-q.com'),
+	'demo' => array('http://pasosconcausa.com'),
 
 ));
 

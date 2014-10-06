@@ -504,7 +504,8 @@ p {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.18);
     padding:65px 0 95px 0;
     background: url(../images/theme_images/mobile_section_divider.png) no-repeat center bottom;
-    background-size:35% auto;            
+    background-size:35% auto;
+    background: linear-gradient(to left,  rgba(61,9,107,0.79) 0%,rgba(61,9,107,0.19) 78%,rgba(0,0,0,0) 100%);
 }
 
 #main-content .section-wrapper.modified-height .content-wrapper {
@@ -635,12 +636,12 @@ h6 {
 /* feature text (larger) styles */
 #main-content .feature-text {
     display:block;
-    font-size:1em;
+    font-size:1.44em;
 }
 
     @media (min-width: 768px) {
-        #main-content .feature-text { font-size:1.18em; }
-        #main-content .feature-text h1 { font-size:2.25em; }
+        #main-content .feature-text { font-size:2.18em; }
+        #main-content .feature-text h1 { font-size:2.75em; }
         #main-content .feature-text h2 { font-size:1.9em; }
         #main-content .feature-text h3 { font-size:1.65em; }
         #main-content .feature-text h4 { font-size:1.35em; }

@@ -12,6 +12,9 @@
 */
 
 Route::get('/', 'Controllers\HomeController@index');
+Route::get('/info', function(){
+	echo phpinfo();
+});
 
 Route::get('signin', function(){ return View::make('signin'); });
 
